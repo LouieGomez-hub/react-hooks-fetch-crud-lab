@@ -35,8 +35,6 @@ function QuestionForm(props) {
         correctIndex: parseInt(formData.correctIndex),
       }),
     })
-    .then((r) => r.json())
-    .then((newQuestion) => onAddQuestion(newQuestion))
   }
 
   return (
