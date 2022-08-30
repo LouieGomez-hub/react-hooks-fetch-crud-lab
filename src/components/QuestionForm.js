@@ -24,11 +24,11 @@ function QuestionForm(props) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: {
+      body:JSON.stringify({
         "prompt": string,
         "answers": arrayofstrings,
         "correctIndex": integer
-      }
+      })
     })
     .then((r) => r.json())
     .then((newQuestion) => onAddQuestion(newQuestion))
