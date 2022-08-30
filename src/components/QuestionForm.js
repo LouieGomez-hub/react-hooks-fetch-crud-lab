@@ -24,11 +24,16 @@ function QuestionForm(props) {
       headers: {
         "Content-Type": "application/json",
       },
-      body:JSON.stringify({
-        "prompt": string,
-        "answers": arrayofstrings,
-        "correctIndex": integer
-      })
+      body: JSON.stringify({
+        prompt: formData.prompt,
+        answers: [
+          formData.answer1,
+          formData.answer2,
+          formData.answer3,
+          formData.answer4,
+        ],
+        correctIndex: parseInt(formData.correctIndex),
+      }),
     })
     .then((r) => r.json())
     .then((newQuestion) => onAddQuestion(newQuestion))
