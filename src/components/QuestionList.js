@@ -6,7 +6,9 @@ function QuestionList() {
   useEffect(() => {
     fetch("http://localhost:4000/questions")
     .then((r) => r.json())
-    .then((questions) => setQuestions(questions));
+    .then((questions) => {
+      setQuestions(questions)
+    });
   }, []);
   
   return (
